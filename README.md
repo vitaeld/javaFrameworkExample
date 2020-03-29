@@ -5,4 +5,4 @@ in the test should be tested by separate test cases. All test cases should have 
 failure in one test would not cause the failure of other ones. 
 When using different input data to create several test cases from 1 test @ParameterizedTest JUnit attribute should be used.
 
-Tools used: Selenium Webdriver +JUnit
+Tools used: Selenium Webdriver +JUnit + Maven
