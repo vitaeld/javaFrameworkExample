@@ -6,3 +6,5 @@ failure in one test would not cause the failure of other ones.
 When using different input data to create several test cases from 1 test @ParameterizedTest JUnit attribute should be used.
 
 Tools used: Selenium Webdriver +JUnit + Maven
+To do:
+Moove left testing data to Json file (such as search input data, expected message etc.)
