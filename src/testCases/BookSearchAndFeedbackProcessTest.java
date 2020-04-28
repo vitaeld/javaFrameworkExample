@@ -27,24 +27,26 @@ class BookSearchAndFeedbackProcessTest extends BaseTest {
 
 	 @Test
 	    void reviewBooksTest() throws Exception {
-		    final String partPath = "\\src\\data\\UserData\\UserData.json";	
-			final String searchInput = "Best crime and mystery books";
-			var validEmail = DataProcessingHelper.getData(partPath,UserData.class).getValidEmail();
-			var pass = DataProcessingHelper.getData(partPath, UserData.class).getValidPassword();
-			var invalidEmail = DataProcessingHelper.getData(partPath,UserData.class).getInvalidEmail();
-			var firstPage = page.GetInstance(FirstPage.class);
-			firstPage.logInFromFirstPage(invalidEmail, pass);
-			var signInPage = page.GetInstance(SignInPage.class);
-			signInPage.logInFromSignInPage(validEmail, pass);
-		    var mainPage = page.GetInstance(MainPage.class);
+		final String partPath = "\\src\\data\\UserData\\UserData.json";	
+		final String searchInput = "Best crime and mystery books";
+		var validEmail = DataProcessingHelper.getData(partPath,UserData.class).getValidEmail();
+		var pass = DataProcessingHelper.getData(partPath, UserData.class).getValidPassword();
+	        var invalidEmail = DataProcessingHelper.getData(partPath,UserData.class).getInvalidEmail();
+		    
+		var firstPage = page.GetInstance(FirstPage.class);
+		firstPage.logInFromFirstPage(invalidEmail, pass);
+		var signInPage = page.GetInstance(SignInPage.class);
+		signInPage.logInFromSignInPage(validEmail, pass);
+		var mainPage = page.GetInstance(MainPage.class);
 	    	mainPage.makeSearch(searchInput);
-			var searchResultsPage = page.GetInstance(SearchResultsPage.class);
-			searchResultsPage.markRateAndReview();
-			mainPage.signOut();
-			var signOutPage = page.GetInstance(SignOutPage.class);
-			var signOutMessage = signOutPage.getSignOutMessage();
-		    final String expectedMessage = "You’ve been signed out.";
-			assertEquals(expectedMessage,signOutMessage);
+		var searchResultsPage = page.GetInstance(SearchResultsPage.class);
+		searchResultsPage.markRateAndReview();
+		mainPage.signOut();
+		var signOutPage = page.GetInstance(SignOutPage.class);
+		var signOutMessage = signOutPage.getSignOutMessage();
+		final String expectedMessage = "Youâ€™ve been signed out.";
+		    
+	        assertEquals(expectedMessage,signOutMessage);
 		
 	}
 }
