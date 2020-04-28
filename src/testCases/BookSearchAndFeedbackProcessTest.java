@@ -16,13 +16,13 @@ class BookSearchAndFeedbackProcessTest extends BaseTest {
 	
 	 @BeforeEach
 	    void setUp() throws Exception {
-			 startBrowser();
+	         startBrowser();
 	         openApplication();
 	   }
 
 	 @AfterEach
 	    void tearDown() { 
-		    closeApplication();
+		 closeApplication();
 	   }
 
 	 @Test
